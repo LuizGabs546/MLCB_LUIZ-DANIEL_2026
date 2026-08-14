@@ -22,3 +22,7 @@ Mensagem: 'Gostaria de cancelar meu cartão de crédito' ==> Intenção Predita:
 Mensagem: 'Quero consultar quanto dinheiro tenho' ==> Intenção Predita: [consultar_saldo]
 Mensagem: 'Pode me ajudar a fazer um pix?' ==> Intenção Predita: [fazer_pix]
 Mensagem: 'Gostaria de cancelar meu cartão de crédito' ==> Intenção Predita: [cancelar_conta]
+
+
+
+Daniel Victor
