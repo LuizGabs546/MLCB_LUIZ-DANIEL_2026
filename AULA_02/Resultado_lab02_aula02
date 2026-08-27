@@ -1,1 +1,22 @@
+--- RESULTADOS DO LAB 02 ---
+Mensagem de Teste: 'Gostaria de devolver o produto que comprei'
+Intenção Predita: troca_devolucao
 
+--- Distribuição de Probabilidades por Classe ---
+Classe [duvida_frete]: 27.99%
+Classe [rastrear_pedido]: 24.54%
+Classe [troca_devolucao]: 47.46%
+
+ 1 - Avaliem os resultados e verifiquem se os resultados foram corretos ou incorretos. Coloque a resposta no arquivo do relatório do laboratório
+Embora a classe correta tenha sido escolhida, a confiança ficou abaixo de 50%. Isso ocorre porque palavras genéricas como "Gostaria", "de", "o", "que" e "comprei" 
+nunca apareceram na base de treino de 9 frases, gerando incerteza no modelo
+
+# 2 - Detectado algum erro, qual seria a maneira mais correta de melhorar o resultado do algoritmo?
+Para melhorar o desempenho do algoritmo, o caminho é otimizar o pré-processamento e os dados. Posso remover stopwords para eliminar palavras irrelevantes, aplicar stemming/lematização para unificar variações 
+de termos e usar N-grams para capturar expressões compostas.
+Além disso, expandir o dataset com mais frases de exemplo é fundamental 
+para aumentar a precisão e a confiança da classificação
+
+# 3 - Detalhe a função do Naive Bayes no algorítmo.
+O Naive Bayes atua como o classificador probabilístico do algoritmo. Sua função é calcular a probabilidade de uma mensagem pertencer a cada intenção com base nas palavras presentes. 
+Ele aplica o Teorema de Bayes assumindo que as palavras são independentes entre si e, ao final, escolhe a classe com a maior probabilidade acumulada.
