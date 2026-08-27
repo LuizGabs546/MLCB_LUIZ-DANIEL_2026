@@ -1,1 +1,5 @@
 
+=== RESULTADOS DAS FRASES INÉDITAS ===
+Frase: 'Preciso comprar um bilhete de avião para o Rio de Janeiro' -> Intenção Prevista: [comprar_passagem]
+Frase: 'Gostaria de cancelar o meu voo do mês que vem' -> Intenção Prevista: [cancelar_reserva]
+Frase: 'Por favor me passe para um suporte humano' -> Intenção Prevista: [cancelar_reserva]
