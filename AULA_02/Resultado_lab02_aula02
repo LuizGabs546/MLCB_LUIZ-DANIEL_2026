@@ -7,7 +7,7 @@ Classe [duvida_frete]: 27.99%
 Classe [rastrear_pedido]: 24.54%
 Classe [troca_devolucao]: 47.46%
 
- 1 - Avaliem os resultados e verifiquem se os resultados foram corretos ou incorretos. Coloque a resposta no arquivo do relatório do laboratório
+# 1 - Avaliem os resultados e verifiquem se os resultados foram corretos ou incorretos. Coloque a resposta no arquivo do relatório do laboratório
 Embora a classe correta tenha sido escolhida, a confiança ficou abaixo de 50%. Isso ocorre porque palavras genéricas como "Gostaria", "de", "o", "que" e "comprei" 
 nunca apareceram na base de treino de 9 frases, gerando incerteza no modelo
 
