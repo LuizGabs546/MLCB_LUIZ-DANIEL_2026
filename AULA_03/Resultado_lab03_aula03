@@ -1,0 +1,10 @@
+//////////////////////// RESULTADO //////////////////////////////
+              Acuracia via Pipeline: 0.00%
+
+2. Qual é a grande vantagem de utilizar o objeto Pipeline no Scikit-Learn?
+A principal vantagem é a organização, automação e reprodutibilidade do fluxo de trabalho. O Pipeline encadeia várias etapas de pré-processamento (como vetorização de texto ou normalização) e o estimador (modelo) em um único objeto. Isso simplifica o código, diminui a quantidade de chamadas manuais e permite aplicar todas as 
+etapas de treino e predição com métodos simples como .fit() e .predict(), facilitando a manutenção e a ida do modelo para produção.
+
+3. Por que o Pipeline evita que erros de pré-processamento ocorram entre treino e teste?
+O Pipeline previne o vazamento de dados (Data Leakage). Ele garante que as estatísticas de pré-processamento (como o vocabulário e os pesos IDF do TfidfVectorizer) sejam aprendidas apenas com os dados de treino durante o .fit(). Ao processar os dados de teste, o pipeline aplica apenas a transformação 
+(.transform()) baseada nessas regras pré-existentes, garantindo que o modelo não "veja" ou aprenda informações do conjunto de teste antes da avaliação final.
