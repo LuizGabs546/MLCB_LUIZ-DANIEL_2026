@@ -28,6 +28,43 @@ tokens_limpos = []
 # - Para as demais palavras, adicione-as sem alteração.
 
 # TODO: Imprima a lista tokens_limpos
+import spacy
+
+# Carregar o modelo de português da spaCy
+try:
+    nlp = spacy.load("pt_core_news_sm")
+except OSError:
+    print("Baixando modelo pt_core_news_sm...")
+    spacy.cli.download("pt_core_news_sm")
+    nlp = spacy.load("pt_core_news_sm")
+
+tokens_str = ["os", "produtos", "comprados", "não", "chegaram"]
+stopwords = ["os", "não"]
+
+# Crie uma lista vazia chamada tokens_limpos
+tokens_limpos = []
+
+# Crie um objeto Doc da spaCy a partir dos tokens
+doc = nlp(" ".join(tokens_str))
+
+# Percorra cada palavra (agora token spaCy) da lista 'doc'
+for token in doc:
+    # Se a palavra estiver em 'stopwords', ignore-a.
+    if token.text in stopwords:
+        continue
+    # Se a palavra for "comprados", adicione "comprar" na lista limpa.
+    elif token.text == "comprados":
+        tokens_limpos.append("comprar")
+    # Se a palavra for "chegaram", adicione "chegar" na lista limpa.
+    elif token.text == "chegaram":
+        tokens_limpos.append("chegar")
+    # Para as demais palavras, adicione a sua forma lematizada.
+    else:
+        tokens_limpos.append(token.lemma_)
+
+# Imprima a lista tokens_limpos
+print(tokens_limpos)
+
 
 Responda: Qual a diferença entre Stemming e Lematização? Por que a Lematização garante que a palavra exista no dicionário e o Stemming não?
 
