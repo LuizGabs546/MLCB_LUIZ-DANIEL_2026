@@ -1,1 +1,85 @@
+================================================
+                exercicio 10 
+================================================
+probabilidades = [0.25, 0.30, 0.15]
+limiar = 0.60
+
+
+# Descobre a maior probabilidade
+maior_confianca = max(probabilidades)
+
+# Verifica se a confiança atingiu o limiar
+if maior_confianca >= limiar:
+    print("Intenção Confirmada")
+else:
+    print("Acionar Fallback")
+Acionar Fallback 
+
+Responda: Diante de uma intenção ambígua que aciona o Fallback, qual mensagem o chatbot deve exibir ao usuário e qual o objetivo dessa resposta? 
+*Resposta:ele aciona o fallback ao ter uma certa baixa na confiança e manda uma mensagem que vai passar para atendimento humanizado ou ate mesmo se vc pode detalhar melhor oque você precisa. 
+o objetivo do fallback é que mesmo em situação de falha o sistema continue funcionando de uma forma confiavel.*
+
+==============================================
+            exercicio 9
+==============================================
+
+palavras = ["correndo", "corredor", "correu"]
+
+# Cria uma lista vazia
+radicais = []
+
+# Reduz todas as palavras ao radical "corr"
+for palavra in palavras:
+    radicais.append("corr")
+
+# Imprime a lista
+print(radicais)
+['corr', 'corr', 'corr']
+
+Responda: O que caracteriza o Stemming em termos de processamento e por que ele é mais rápido do que a Lematização?
+*Resposta: cortar ou reduzir paravras para encontrar um radical comum, quando o computador quer amerzenar ou comparar ele reduz as formas. 
+Stemming ele faz analises mais rapidas, so precisa entender o significado da palavra e aplica as regras dele. 
+ja a lematização ela demora porque faz mais analises e tenta chegar na forma correta da palavra (o correndo dela iria ter como resultado correr)*
+
+==============================================
+            #exercicio 8
+==============================================
+
+vp = 90  # Verdadeiros Positivos (casos graves detectados)
+fn = 10  # Falsos Negativos (casos graves ignorados)
+
+# Calcule o Recall
+recall = vp / (vp + fn)
+
+# Imprima o Recall formatado em porcentagem
+print(f"Recall: {recall:.0%}")
+Recall: 90%
+
+Responda: O Recall foca em evitar Falsos Positivos ou Falsos Negativos? Por que ter um Recall alto é vital na área de saúde ou segurança?
+*Resposta: *Ele foca em falsos negativos faz uma prevenção contra. Um falso negativo pode ter consequências sérias. 
+Por exemplo, se um sistema não identificar um paciente que apresenta sinais de uma condição grave, esse paciente pode não receber a avaliação necessária no momento adequado *
+
+#==============================================
+            #exercicio 7
+#==============================================
+
+bruta = ["O", "sistema", "está", "muito", "lento", "hoje", "!"]
+stopwords = ["O", "está"]
+
+# Crie uma lista vazia
+tokens_limpos = []
+
+# Percorra a lista e filtre as stopwords e "!"
+for palavra in bruta:
+    if palavra not in stopwords and palavra != "!":
+        tokens_limpos.append(palavra)
+
+# Imprima o resultado
+print(tokens_limpos)
+['sistema', 'muito', 'lento', 'hoje']
+
+Responda:O que são Stopwords e por que sua remoção é importante no pré-processamento?
+*Resposta: Ele remove palavras que não tem tanta importancia e que não vai afetar na questão do entendimento do resultado. 
+porque ele elimina palavras frenquentes que em tarefas acrescentam poucas informação *
+
 
