@@ -65,8 +65,15 @@ for token in doc:
 # Imprima a lista tokens_limpos
 print(tokens_limpos)
 
+-------------------------------------------------------------
+
+['produto', 'comprar', 'chegar']
+
+-------------------------------------------------------------
 
 Responda: Qual a diferença entre Stemming e Lematização? Por que a Lematização garante que a palavra exista no dicionário e o Stemming não?
+
+Stemming tem o método de achar um padrão nas frase e redozir e a lematização usa as classes gramaticais e contexto para fazer a associação, a lematização analisa a gramatica correta das frases assim mantendo seu significado.
 
 
 --------------------------------------------------------------------------------
@@ -80,7 +87,26 @@ Cenário: Um banco precisa verificar se a confiança da intenção é suficiente
 
 # TODO: Teste a função chamando-a com o valor 0.55 e imprima o resultado
 
+def validar_funcao(confianca):
+
+  if confianca > 0.70:
+    print("Ação Executada")
+
+  else:
+    print("Fallback Acionado")
+
+validar_funcao(0.55)
+
+-------------------------------------------------------------
+
+Ação Executada
+
+-------------------------------------------------------------
+
+
 Responda: O que aconteceria de errado no sistema de um banco se o limiar de confiança (Threshold) fosse configurado em apenas 20% (0.20)?
+
+O sistema pode contem múltiplos erros por não ter uma verificação da integridade dos dados confiável.
 
 
 --------------------------------------------------------------------------------
@@ -94,8 +120,32 @@ Cenário: Uma imobiliária classifica mensagens com base na raridade dos termos.
 
 # TODO: Teste a função para a palavra "vazamento" ("pouco_frequente") e imprima o peso
 
+
+def calcular_peso_tfidf(documentos):
+    for documento, frequencia in documentos:
+        if frequencia == "muito frequente":
+            print(documento, "→", 0.1)
+
+        elif frequencia == "pouco frequente":
+            print(documento, "→", 0.9)
+
+
+calcular_peso_tfidf([
+    ("tenho um vazamento em casa", "muito frequente"),
+    ("meu carro está quebrado", "pouco frequente")
+])
+
+-------------------------------------------------------------
+
+tenho um vazamento em casa → 0.1
+meu carro está quebrado → 0.9
+
+-------------------------------------------------------------
+
+
 Responda: Qual a lógica conceitual do TF-IDF para atribuir peso baixo a palavras muito comuns e peso alto a palavras raras num banco de dados?
 
+Facilita o entendimento de palavras chaves, criando uma interpretação mais limpa dos comandos do sistema.
 
 --------------------------------------------------------------------------------
 EXERCÍCIO 04: Métricas de Avaliação — Calculando a Precisão
@@ -110,7 +160,24 @@ precisao =
 
 # TODO: Imprima a precisão formatada em porcentagem (multiplicada por 100)
 
+vp = 80  # Verdadeiros Positivos
+fp = 20  # Falsos Positivos
+fn = 5   # Falsos Negativos
+
+
+precicao = (vp / (vp + fp)) * 100
+
+print(precicao)
+
+-------------------------------------------------------------
+
+80.0
+
+-------------------------------------------------------------
+
 Responda: Em detecção de fraudes, o que representa um Falso Positivo e um Falso Negativo? Qual dos dois gera prejuízo financeiro direto à empresa?
+
+O falso positivo é um dado que não e real sendo interpretado como positivo e um falso negativo e um dado positivo que foi interpretado como real, depende do contexto em que o sistema se encontra pois essa má interpretação dos dados pode prejudicar as pessoas de forma diferente.
 
 
 --------------------------------------------------------------------------------
